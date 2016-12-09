@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MbtaConfiguration {
 
     public static void main(String[] args) {
-        SpringApplication.run(MbtaController.class, args);
+        SpringApplication.run(MbtaConfiguration.class, args);
     }
 
 }
