@@ -14,4 +14,15 @@ public enum DirectionEnum {
     public String getValue() {
         return value;
     }
+
+    public static DirectionEnum lookup(String direction) {
+        for (DirectionEnum directionEnum: DirectionEnum.values()) {
+
+            if (directionEnum.name().equals(direction)) {
+                return directionEnum;
+            }
+        }
+
+        return DirectionEnum.BOTH;
+    }
 }

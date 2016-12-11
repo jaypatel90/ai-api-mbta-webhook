@@ -30,10 +30,7 @@ public class MbtaService {
         MbtaResponse mbtaResponse = mbtaClient.getNextFiveTrainsFromStop(direction, stopId, line);
         Optional<Mode> subwayMode = mbtaResponse.getMode().stream().filter(mode -> "Subway".equals(mode.getModeName())).findFirst();
 
-        if (!subwayMode.isPresent()) {
-            return DEFAULT_SPEECH;
-        }
-        return constructSpeechForNextFiveTrains(subwayMode.get().getRoute());
+        return subwayMode.map(mode -> constructSpeechForNextFiveTrains(mode.getRoute())).orElse(DEFAULT_SPEECH);
     }
 
     private String constructSpeechForNextFiveTrains(List<Route> routes) {
