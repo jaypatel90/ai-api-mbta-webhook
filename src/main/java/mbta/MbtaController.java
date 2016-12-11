@@ -18,7 +18,7 @@ public class MbtaController {
         mbtaService = new MbtaService();
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody ScheduleRequest scheduleRequest){
 
         String speech = mbtaService.getNextFiveTrainsFromStop(DirectionEnum.lookup(scheduleRequest.getDirection()),
