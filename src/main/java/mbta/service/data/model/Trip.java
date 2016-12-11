@@ -19,9 +19,9 @@ public class Trip {
     @JsonProperty("trip_name")
     private String tripName;
     @JsonProperty("sch_arr_dt")
-    private String schArrDt;
+    private Long schArrDt;
     @JsonProperty("sch_dep_dt")
-    private String schDepDt;
+    private Long schDepDt;
 
     /**
      * 
@@ -69,7 +69,7 @@ public class Trip {
      *     The schArrDt
      */
     @JsonProperty("sch_arr_dt")
-    public String getSchArrDt() {
+    public Long getSchArrDt() {
         return schArrDt;
     }
 
@@ -79,7 +79,7 @@ public class Trip {
      *     The sch_arr_dt
      */
     @JsonProperty("sch_arr_dt")
-    public void setSchArrDt(String schArrDt) {
+    public void setSchArrDt(Long schArrDt) {
         this.schArrDt = schArrDt;
     }
 
@@ -89,7 +89,7 @@ public class Trip {
      *     The schDepDt
      */
     @JsonProperty("sch_dep_dt")
-    public String getSchDepDt() {
+    public Long getSchDepDt() {
         return schDepDt;
     }
 
@@ -99,7 +99,7 @@ public class Trip {
      *     The sch_dep_dt
      */
     @JsonProperty("sch_dep_dt")
-    public void setSchDepDt(String schDepDt) {
+    public void setSchDepDt(Long schDepDt) {
         this.schDepDt = schDepDt;
     }
 
