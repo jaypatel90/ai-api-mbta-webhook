@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 public class MbtaService {
 
     public static final String DEFAULT_SPEECH = "Sorry, could not understand. Maybe you have an accent?";
-    public static final String STOP_NOT__FOUND_SPEECH = "Chutye, tere baap ne station banaaya hai?";
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
     private static final int MAX_COUNT = 5;
 
@@ -32,7 +31,7 @@ public class MbtaService {
         String stopId = stopsDataService.findStopId(stopName);
 
         if (stopId == null) {
-            return STOP_NOT__FOUND_SPEECH;
+            return DEFAULT_SPEECH;
         }
         MbtaResponse mbtaResponse = mbtaClient.getNextFiveTrainsFromStop(direction, stopId, line);
         Optional<Mode> subwayMode = mbtaResponse.getMode().stream().filter(mode -> "Subway".equals(mode.getModeName())).findFirst();
