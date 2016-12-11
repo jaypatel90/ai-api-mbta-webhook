@@ -18,7 +18,7 @@ public enum DirectionEnum {
     public static DirectionEnum lookup(String direction) {
         for (DirectionEnum directionEnum: DirectionEnum.values()) {
 
-            if (directionEnum.name().equals(direction)) {
+            if (directionEnum.name().compareToIgnoreCase(direction) == 0) {
                 return directionEnum;
             }
         }
