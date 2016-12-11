@@ -27,6 +27,7 @@ public class MbtaController {
         String line = parameters.get("line");
         String station = parameters.get("station");
 
+        System.out.print("station:" + station);
         String speech = mbtaService.getNextFiveTrainsFromStop(DirectionEnum.lookup(direction),
                 station,
                 line);
